@@ -88,7 +88,7 @@ with open('Genome/Po1f.gff3') as f:
                 else:
                     short = "K something went wrong!"
                 
-                short.replace("%2C", ",").replace("%20", " ").replace("%28", "(").replace("%29", ")").replace("%2F", "/").replace("%3A", ":").replace("%3B", ";").replace("%3D", "=").replace("%3F", "?").replace("%5B", "[").replace("%5D", "]").replace("%5E", "^").replace("%7B", "{").replace("%7C", "|").replace("%7D", "}").replace("%7E", "~")
+                short = short.replace("%2C", ", ").replace("%20", " ").replace("%28", "(").replace("%29", ")").replace("%2F", "/").replace("%3A", ":").replace("%3B", ";").replace("%3D", "=").replace("%3F", "?").replace("%5B", "[").replace("%5D", "]").replace("%5E", "^").replace("%7B", "{").replace("%7C", "|").replace("%7D", "}").replace("%7E", "~")
 
                 short_cut = re.search(r'([^;%,]+)', short).group(1)
 
@@ -104,7 +104,7 @@ with open('Genome/Po1f.gff3') as f:
                 print(short_with_species)
 
 
-                c[8] += f';Note={status_text}{note};description={status_text}{short_with_species}{type_text}'
+                c[8] += f';description={status_text}{note};Note={status_text}{short_with_species}{type_text}'
                 line = '\t'.join(c) + '\n'
         out.write(line)
 out.close()
