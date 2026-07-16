@@ -16,6 +16,7 @@ with open("C:/Github/YALI_omics/Genome/Po1f_annot.gff3", "r") as f:
             lt = re.search(r'locus_tag=([^;]+)', c[8])
             note = re.search(r'Note=([^;]+)', c[8])
             description = re.search(r'description=([^;]+)', c[8])
+            print(f"{lt.group(1)}\t{note.group(1)}\t{description.group(1)}")
 
 
 
